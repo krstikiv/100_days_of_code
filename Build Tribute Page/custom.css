@@ -1,0 +1,17 @@
+
+body {
+	font-family: 'Artifika', serif;
+	}
+
+img {
+	margin: 25px;
+}
+
+.thumbnail {
+	height: 300px;
+}
+
+p.lead {
+	margin-top: 10px;
+}
+
