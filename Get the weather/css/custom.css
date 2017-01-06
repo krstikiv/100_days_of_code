@@ -1,0 +1,29 @@
+body{
+  background-size:cover;
+  text-align: center;
+}
+
+#weather {
+  margin: 80px 0px 80px 0px;
+}
+
+h2, h3 {
+  font-weight: bold;
+}
+
+#type {
+  text-transform: capitalize;
+}
+
+div.row {
+   background-color: #fff;
+    opacity: 0.7;
+    filter: Alpha(opacity=50); /* IE8 and earlier */
+}
+
+.btn {
+  height: 35px;
+  border: solid black;
+  margin-top: -0.5px;
+  margin-bottom: 10px;
+}

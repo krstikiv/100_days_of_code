@@ -7,3 +7,6 @@ Day 2 (12/31/16)
 
 Day 3 (1/2/17)
 4:30PM - 7:00 PM  //Learning Javascript Basics
+
+Day 4 (1/6/17)
+7:00PM - 10:11 PM// Get the Local Weather app

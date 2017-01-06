@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Get the Local Weather Web App</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <script>
+    // Only change code below this line.
+    var long;
+    var lat;
+    var fahrenheit;
+    var celsius;
+
+    if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      long = position.coords.longitude;
+      lat = position.coords.latitude;
+    $("#data").html("latitude: " + lat + "<br>longitude: " + long);
+    });
+    }
+
+    var api = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid=9eec7e30bdcc5d2dcbf7c470f5f0edde';
+    
+    $.getJSON(api, function(data) {
+     var weatherType = data.weather[0].description;
+      var kelvin = data.main.temp;
+      var windSpeed = data.wind.speed;
+      var city - data.name;
+
+      fahrenheit = (kelvin)*(9/5)-459.67;
+      celsius = kelvin - 273.15;
+
+    });
+
+    $("#city").html(city);
+
+    </script>
+    
+    </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <p id="data"></p>
+    <p id="city"></p>
+    <p id="temp"></p>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  </body>
+</html>
