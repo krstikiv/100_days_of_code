@@ -6,10 +6,17 @@ Day 2 (12/31/16)
 4:22PM - 5:20 PM // Learning Javascript Basics
 
 Day 3 (1/2/17)
-4:30PM - 7:00 PM  //Learning Javascript Basics
+4:30PM - 7:00 PM  // Learning Javascript Basics
 
 Day 4 (1/6/17)
-7:00PM - 10:11 PM// Get the Local Weather app
+7:00PM - 10:11 PM // Get the Local Weather app
 
 Day 5 (1/7/17)
-2:36 PM - 4:00 PM 7:00PM - 9:22 PM //Wikipedia Viewer
+2:36 PM - 4:00 PM 7:00PM - 9:22 PM // Wikipedia Viewer
+
+Day 6 (1/8/17)
+6:23 PM - 8:20 PM // TwitchAPI
+
+Day 7 (1/9/17)
+10:51 AM - 13:00 PM // TwitchAPI
+6:00 PM - 9:00 PM // Wikipedia Viewer

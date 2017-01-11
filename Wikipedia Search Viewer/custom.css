@@ -2,10 +2,6 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.title {
-  text-align: center;
-}
-
 img {
   width: 200px;
   height: auto;
@@ -16,8 +12,15 @@ img {
 
 .middle {
   margin-top: 50px;
- text-align: center;  
+  text-align: center;  
 }
+
+.form-inline {
+  margin-top: 50px;
+ text-align: center;
+}
+
+
 
 .input-field {
   width: 500px;
@@ -25,7 +28,7 @@ img {
 #display-result {
   margin-top: 50px;
   margin-bottom: 30px;
-}
+ }
 
 .footer {
   position: fixed;
@@ -34,29 +37,52 @@ img {
   height: 20px;
   background-color: #f5f5f5;
 }
-
-/*the below are required for the jquery ui */
-.ui-autocomplete {
-  width:20px;
-  border:1px solid lightgray;
-  padding-right: 2%;
-  background-color: white;
-  text-align:right;
-  font-weight:normal;
-  color:gray;
+     .ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;   
+    padding: 4px 0;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #ffffff;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
 }
 
-.ui-autocomplete li {
-  list-style:none;
+.ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+    text-decoration: none;
 }
 
-.ui-autocomplete li:hover {
-  font-weight:bold;
+.ui-state-hover, .ui-state-active {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #0088cc;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    background-image: none;
 }
-
-.ui-helper-hidden-accessible {
-  display:none;
-}
-
-
-/*end autocomplete UI */

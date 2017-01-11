@@ -20,7 +20,7 @@ $(document).ready(function() {
         $('#display-result').html('');
         //display Wiki's data into the div element. 
         for (var i = 0; i < data[1].length; i++) {
-          $('#display-result').prepend("<div><div><a href=" + data[3][i] + "><h2>" + data[1][i] + "</h2></a>" + "<p>" + data[2][i] + "</p></div></div>");
+          $('#display-result').prepend("<div><div><a href=" + data[3][i] + " target='_blank'>" + data[1][i] + "</a>" + "<p>" + data[2][i] + "</p></div></div>");
         }
 
         $("#userInput").val(''); //clear the search field
