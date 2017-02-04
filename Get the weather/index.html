@@ -13,14 +13,11 @@
          
     </head>
     <body>
-      <div class="container-fluid">
-
+<div class="container">
   <div class="row">
     <div id="error"></div>
   </div>
-
   <div id="labels" class="row">
-
     <div id="location_label" class="col-xs-12 col-lg-3">
       <h3>Location</h3>
       <div id="results" class="row">
@@ -28,7 +25,6 @@
         </div>
       </div>
     </div>
-
     <div id="weather_label" class="col-xs-12 col-lg-3">
       <h3>Weather</h3>
       <div id="results" class="row">
@@ -36,7 +32,6 @@
         </div>
       </div>
     </div>
-
     <div id="temp_label" class="col-xs-12 col-lg-3">
       <h3>Temperature</h3>
       <div id="results" class="row">
@@ -45,7 +40,6 @@
         </div>
       </div>
     </div>
-
     <div id="wind_label" class="col-xs-12 col-lg-3">
       <h3>Wind Speed:</h3>
       <div id="results" class="row">
@@ -53,19 +47,32 @@
         </div>
       </div>
     </div>
+  </div>
+  <!-- end geolocation row -->
 
-  </div>
-  
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="input-field"></label>
+          <input id="search-field" type="text" class="form-control" placeholder="Search for a city...">
+                  </div>
+        <button type="submit" id="search-cities" value="Search" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+
+
+    </div>
+
+  <!-- end container -->
   <footer class="footer">
-  <div class="container">
-    <p class="text-muted">A Weather Underground API for local weather display (a freeCodeCamp project). Images taken from Pexels under the Creative Commons Zero (CC0) license.</p>
-  </div>
-</footer>
-</div>
-<!-- end container -->
+    <img class="img-responsive" src="https://icons.wxug.com/logos/JPG/wundergroundLogo_4c_horz.jpg" alt="Weather Underground Logo">
+    <p class="text-muted">Weather Underground API and images from Pexels under the Creative Commons Zero (CC0) license (a freeCodeCamp Project).</p>
+  </footer>
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
 
         

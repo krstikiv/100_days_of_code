@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
 
-  //Get GeoLocation with error if browser does not support it
+var cities = [];
+
+    //Get GeoLocation with error if browser does not support it
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var lat = position.coords.latitude;
@@ -96,4 +98,57 @@ jQuery(document).ready(function($) {
     $("#error").html("Geolocation is not supported by this browser.");
 
   } //End If check
+
+$('#search-field').autocomplete({
+  autoFocus: false,
+  delay: 500,
+  focus: function (event, ui) {
+    $('#search-field').val(ui.item.value);
+  },
+  minLength: 3,
+  open: function () {
+    // prevent the need for double-tap on mobile to select menu item
+    $('.ui-autocomplete').off('menufocus hover mouseover');
+  },
+  select: function (event, ui) {
+    getWeather(cities[cities.indexOf(ui.item.value) + 1]);
+  },
+  source: cities,
+})
+
+.keyup(function (e) {
+  var key = e.keyCode || e.which,
+      cityAutoComplete = 'https://autocomplete.wunderground.com/aq?cb=?&query=' +
+                        $('#search-field').val();
+
+  // clear search field when user presses esc
+  if (key === 27) $('#search-field').val('');
+
+  // Update the autocomplete list when there are more than 2 characters and
+  // the user enters a backspace, space, comma, period, or letter.
+  if ($('#search-field').val().length > 2 &&
+     (key === 8 | key === 32 | key === 44 | key === 46) |
+     (key >= 65 && key <= 90) | (key >= 97 && key <= 122)) {
+
+    cities.length = 0; // clear the array for a new list of cities
+
+    // Push all autocomplete values to the cities array with their corresponding weather stations.
+    // Limit to 20 non-duplicate entries. The API also allows searches for "snow", for example,
+    // so we only allow values with a comma to show up in the autocomplete list.
+    $.getJSON(cityAutoComplete).done(function (data) {
+      $.each(data.RESULTS, function (i) {
+        var city = data.RESULTS[i].name;
+        if (city.indexOf(',') > -1 && cities.indexOf(city) < 0)  {
+          cities.push(city, data.RESULTS[i].l);
+        }
+      });
+    })
+    .fail(function (err) {
+      console.log('Error: ' + JSON.stringify(err));
+    });
+  }
+});
+
+
+
 }); //End document
